@@ -23,7 +23,7 @@
             overflow-x: hidden;
         }
 
-        /* ===== SUMMER ATMOSPHERE: CLOUDS & SUN ===== */
+        /* ===== SUMMER BACKGROUND & CLOUDS ===== */
         .sky-layer {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -44,15 +44,6 @@
         @keyframes drift {
             from { transform: translateX(-350px); }
             to { transform: translateX(110vw); }
-        }
-
-        .sun-glow {
-            position: fixed;
-            top: -80px; right: -80px;
-            width: 450px; height: 450px;
-            background: radial-gradient(circle, #fff 0%, var(--yellow) 40%, transparent 75%);
-            opacity: 0.8;
-            z-index: -1;
         }
 
         /* ===== CALM FALLING LEAVES ===== */
@@ -84,100 +75,90 @@
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
             z-index: 1000;
         }
-        .nav-logo { font-weight: 800; font-size: 1.4rem; color: var(--blue); }
-        nav a { text-decoration: none; color: var(--blue); font-weight: 600; margin-left: 20px; font-size: 0.9rem; }
+        .nav-logo { font-weight: 800; font-size: 1.4rem; }
 
-        /* ===== HERO SECTION ===== */
-        header {
-            padding: 90px 20px 50px;
+        /* ===== CARDS & SECTIONS ===== */
+        .section { max-width: 1100px; margin: 30px auto; padding: 20px; position: relative; z-index: 10; }
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            margin-bottom: 30px;
+        }
+
+        /* ===== FACILITIES LIST ===== */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .facility-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            padding: 10px;
+            background: #fdfaf0;
+            border-radius: 10px;
+        }
+
+        /* ===== PRICING ===== */
+        .pricing-wrap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .price-card {
+            background: #fff;
+            padding: 40px 20px;
+            border-radius: 20px;
             text-align: center;
+            border: 1px solid #f0f0f0;
             position: relative;
         }
-
-        h1 { font-size: 3rem; margin-bottom: 10px; }
-        .subtitle { font-size: 1.2rem; margin-bottom: 15px; font-weight: 600; color: #444; }
-        
-        .important-badges { margin-bottom: 30px; }
-        .badge {
-            display: inline-block;
-            padding: 6px 16px;
-            margin: 5px;
-            border-radius: 5px;
-            font-weight: 700;
-            font-size: 0.9rem;
+        .price-card.featured { border: 2px solid var(--orange); }
+        .save-tag {
+            background: var(--orange); color: #fff; padding: 5px 15px;
+            border-radius: 20px; position: absolute; top: -15px; left: 50%;
+            transform: translateX(-50%); font-weight: 800; font-size: 0.8rem;
         }
-        .badge-red { background: rgba(211, 47, 47, 0.1); color: var(--red); border: 1px solid var(--red); }
-        .badge-blue { background: rgba(0, 51, 102, 0.1); color: var(--blue); border: 1px solid var(--blue); }
+        .price-val { font-size: 2.5rem; font-weight: 800; margin: 10px 0; }
 
-        .cta-btns { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        /* ===== FAQ ===== */
+        .faq-item { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+        .faq-q { font-weight: 700; color: var(--blue); }
+        .faq-a { color: #555; margin-top: 5px; }
+
+        /* ===== BUTTONS ===== */
         .btn {
-            padding: 16px 35px; border-radius: 10px; border: none;
+            padding: 15px 30px; border-radius: 10px; border: none;
             font-weight: 700; cursor: pointer; text-decoration: none;
-            transition: 0.3s;
+            display: inline-block; transition: 0.3s;
         }
         .btn-wa { background: var(--wa); color: white; }
         .btn-call { background: var(--blue); color: white; }
 
-        /* ===== PRICING CARDS ===== */
-        .section { max-width: 1100px; margin: 30px auto; padding: 20px; position: relative; z-index: 10; }
-        .pricing-wrap {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        .card {
-            background: #fff;
-            padding: 45px 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
-            border: 1px solid #f0f0f0;
-            position: relative;
-        }
-        .card.featured { border: 2.5px solid var(--orange); }
-        .save-tag {
-            background: var(--orange); color: #fff;
-            padding: 7px 18px; border-radius: 20px;
-            font-size: 0.9rem; font-weight: 800;
-            position: absolute; top: -18px; left: 50%; transform: translateX(-50%);
-        }
-        .card h3 { font-size: 1.6rem; margin-bottom: 10px; color: var(--blue); }
-        .price-val { font-size: 2.8rem; font-weight: 800; color: var(--blue); margin-bottom: 5px; }
-        .sharing { font-weight: 700; color: #555; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
-        .deposit-info { color: #666; font-size: 0.95rem; margin-bottom: 10px; border-top: 1px dashed #ddd; padding-top: 10px; }
-        .no-food { color: var(--red); font-size: 0.85rem; font-weight: 700; }
-
-        /* ===== FULL WIDTH BOXES ===== */
-        .full-box { background: #fff; border-radius: 25px; padding: 40px; margin-bottom: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); }
-        h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; color: var(--blue); }
-        iframe { border-radius: 15px; border: none; width: 100%; background: #fafafa; }
-
         /* ===== FLOAT UI ===== */
         .float-container { position: fixed; bottom: 30px; right: 25px; display: flex; flex-direction: column; gap: 15px; z-index: 2000; }
-        .f-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; font-size: 26px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            nav a { display: none; }
-            .pricing-wrap { gap: 40px; }
-        }
+        .f-icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 26px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); text-decoration: none; }
     </style>
 </head>
 <body>
 
     <div class="sky-layer"></div>
-    <div class="sun-glow"></div>
     
-    <div class="cloud" style="width: 350px; height: 100px; top: 12%; animation-duration: 35s;"></div>
-    <div class="cloud" style="width: 250px; height: 80px; top: 35%; animation-duration: 50s; animation-delay: -5s;"></div>
+    <div class="cloud" style="width: 300px; height: 100px; top: 10%; animation-duration: 40s;"></div>
+    <div class="cloud" style="width: 200px; height: 70px; top: 30%; animation-duration: 55s; animation-delay: -10s;"></div>
 
     <script>
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 12; i++) {
             let leaf = document.createElement('div');
             leaf.className = 'leaf';
             leaf.innerHTML = '🍃';
             leaf.style.left = Math.random() * 100 + 'vw';
-            leaf.style.animationDuration = (Math.random() * 6 + 7) + 's';
+            leaf.style.animationDuration = (Math.random() * 5 + 7) + 's';
             leaf.style.animationDelay = (Math.random() * 8) + 's';
             document.body.appendChild(leaf);
         }
@@ -185,87 +166,96 @@
 
     <nav>
         <div class="nav-logo">Girls PG Anisabad</div>
-        <div>
-            <a href="#pricing">Pricing</a>
-            <a href="#book">Reserve Bed</a>
-            <a href="#contact">Location</a>
-        </div>
+        <div style="font-size: 0.9rem; font-weight: 600;">Patna, Bihar</div>
     </nav>
 
-    <header>
-        <h1>Girls PG — Anisabad Patna</h1>
-        <p class="subtitle">Premium Triple Sharing Accommodation</p>
-        
-        <div class="important-badges">
-            <span class="badge badge-red">⚠️ FOODING NOT INCLUDED</span>
-            <span class="badge badge-blue">🔐 1-MONTH SECURITY DEPOSIT REQUIRED</span>
-        </div>
-
-        <div class="cta-btns">
-            <a href="https://wa.me/918969994472" class="btn btn-wa">WhatsApp Enquiry</a>
-            <a href="tel:8969994472" class="btn btn-call">Call Admission</a>
+    <header style="text-align: center; padding: 60px 20px;">
+        <h1 style="font-size: 2.5rem;">Premium Girls Accommodation</h1>
+        <p style="margin: 10px 0 20px; font-weight: 600;">📍 Harnichak, Anisabad, Patna</p>
+        <p style="color: var(--red); font-weight: 700; background: rgba(211,47,47,0.1); display: inline-block; padding: 5px 15px; border-radius: 5px;">⚠️ FOODING NOT INCLUDED</p>
+        <div style="margin-top: 25px;">
+            <a href="tel:8969994472" class="btn btn-call">Call: 8969994472</a>
         </div>
     </header>
 
-    <div class="section" id="pricing">
-        <h2>Choose Your Plan</h2>
-        <div class="pricing-wrap">
-            <div class="card">
-                <h3>Monthly</h3>
-                <div class="price-val">₹7,000</div>
-                <p class="sharing">Triple Sharing</p>
-                <div class="deposit-info">Security Deposit: ₹7,000</div>
-                <p class="no-food">Fooding Not Included</p>
-            </div>
-            
-            <div class="card featured">
-                <div class="save-tag">SAVE ₹6,000</div>
-                <h3>6-Month Plan</h3>
-                <div class="price-val">₹36,000</div>
-                <p class="sharing">Triple Sharing</p>
-                <div class="deposit-info">Security Deposit: ₹7,000</div>
-                <p class="no-food">Fooding Not Included</p>
-            </div>
-            
-            <div class="card featured">
-                <div class="save-tag">SAVE ₹24,000</div>
-                <h3>Yearly Plan</h3>
-                <div class="price-val">₹60,000</div>
-                <p class="sharing">Triple Sharing</p>
-                <div class="deposit-info">Security Deposit: ₹7,000</div>
-                <p class="no-food">Fooding Not Included</p>
+    <div class="section">
+        <div class="card">
+            <h2 style="margin-bottom: 20px; border-left: 5px solid var(--orange); padding-left: 15px;">Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-item">🛏️ Bed & Mattress</div>
+                <div class="facility-item">📶 High-Speed Wi-Fi</div>
+                <div class="facility-item">💧 RO Drinking Water</div>
+                <div class="facility-item">🔋 Power Backup</div>
+                <div class="facility-item">📹 CCTV Security</div>
+                <div class="facility-item">🧊 Refrigerator</div>
+                <div class="facility-item">🍳 Induction Allowed</div>
+                <div class="facility-item">👯 Triple Sharing</div>
+                <div class="facility-item">🪑 Common Study Room</div>
+                <div class="facility-item">📰 Daily Newspaper</div>
+                <div class="facility-item">🛡️ Safe for Girls</div>
             </div>
         </div>
-    </div>
 
-    <div class="section" id="book">
-        <div class="full-box">
-            <h2>Instant Room Booking</h2>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeybnccLzNMSXBJpdzUU6L6cVGiavVVWmfQApqMLKEXTxubMA/viewform?embedded=true" height="600">Loading form...</iframe>
+        <h2 style="text-align: center; margin-bottom: 25px;">Pricing Plans</h2>
+        <div class="pricing-wrap">
+            <div class="price-card">
+                <h3>Monthly</h3>
+                <div class="price-val">₹7,000</div>
+                <p>Triple Sharing</p>
+                <p style="margin-top: 10px; font-size: 0.85rem; color: #666;">+ ₹7,000 Security Deposit</p>
+            </div>
+            <div class="price-card featured">
+                <div class="save-tag">SAVE ₹6,000</div>
+                <h3>6 Months</h3>
+                <div class="price-val">₹36,000</div>
+                <p>Triple Sharing</p>
+                <p style="margin-top: 10px; font-size: 0.85rem; color: #666;">+ ₹7,000 Security Deposit</p>
+            </div>
+            <div class="price-card featured">
+                <div class="save-tag">SAVE ₹24,000</div>
+                <h3>Yearly</h3>
+                <div class="price-val">₹60,000</div>
+                <p>Triple Sharing</p>
+                <p style="margin-top: 10px; font-size: 0.85rem; color: #666;">+ ₹7,000 Security Deposit</p>
+            </div>
         </div>
     </div>
 
     <div class="section">
-        <div class="full-box" style="text-align: center;">
-            <h2>Secure Your Admission</h2>
-            <p style="margin-bottom: 25px; color: #555;">Pay your security deposit or advance to confirm your stay.</p>
-            <div class="cta-btns">
-                <a href="#" class="btn btn-call">Razorpay Secure</a>
-                <a href="upi://pay?pa=8969994472@upi&pn=GirlsPG" class="btn btn-wa" style="background: #E67E22;">Direct UPI Payment</a>
+        <div class="card">
+            <h2 style="margin-bottom: 20px;">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <p class="faq-q">Is food included?</p>
+                <p class="faq-a">No.</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-q">Is deposit refundable?</p>
+                <p class="faq-a">Yes (terms apply).</p>
+            </div>
+            <div class="faq-item">
+                <p class="faq-q">Is it girls-only?</p>
+                <p class="faq-a">Yes.</p>
             </div>
         </div>
     </div>
 
-    <div class="section" id="contact">
-        <div class="full-box">
-            <h2>Visit Us</h2>
-            <p style="text-align: center; margin-bottom: 20px;">📍 Anishabad, near junior dps, Harnichak, Anisabad, Patna, Bihar 800002</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.6653805825227!2d85.09498647614214!3d25.57984211593361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed29df03ba09ab%3A0xf497c00ec082db37!2sPG%20FOR%20GIRLS%20%7BSTUDENTS%20%2F%20WORKING%7D!5e0!3m2!1sen!2sin!4v1740060000000!5m2!1sen!2sin" height="350" allowfullscreen="" loading="lazy"></iframe>
+    <div class="section">
+        <div class="card">
+            <h2 style="margin-bottom: 15px;">Our Location</h2>
+            <p style="margin-bottom: 15px; font-size: 0.9rem;">📍 Anishabad, near junior dps, Harnichak, Patna, Bihar 800002</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.674932021594!2d85.0934141!3d25.5824984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39edafdf03ba99ab%3A0xf497400ec082db37!2sPG%20FOR%20GIRLS%20%7BSTUDENTS%20%2F%20WORKING%7D!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="400" 
+                style="border:0; border-radius: 15px;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 40px; color: #777; font-size: 0.9rem; background: rgba(255,255,255,0.4);">
-        © 2026 Girls PG Anisabad Patna. Safe, Clean, and Premium Living.
+    <footer style="text-align: center; padding: 40px; color: #888; font-size: 0.85rem;">
+        © 2026 Girls PG Anisabad Patna | Safe for Girls
     </footer>
 
     <div class="float-container">
