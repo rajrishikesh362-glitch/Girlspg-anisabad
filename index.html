@@ -27,10 +27,16 @@ body{
   right:-120px;
   width:420px;
   height:420px;
-  background:radial-gradient(circle, #fff59d 0%, var(--yellow) 45%, transparent 70%);
+  background:radial-gradient(circle, #fff59d 0%, var(--yellow) 40%, var(--orange) 65%, transparent 75%);
   border-radius:50%;
   z-index:-2;
-  filter:blur(1px);
+  animation:sunGlow 6s ease-in-out infinite alternate;
+  box-shadow:0 0 60px rgba(255,213,79,.6), 0 0 120px rgba(255,183,77,.4);
+}
+
+@keyframes sunGlow{
+  from{transform:scale(1); opacity:.9;}
+  to{transform:scale(1.08); opacity:1;}
 }
 
 /* ===== TREES SIDES ===== */
@@ -184,7 +190,7 @@ for(let i=0;i<28;i++){
 </section><section id="booking" class="card">
 <h2>🔥 Instant Room Booking</h2>
 <p>Fill the form to reserve your bed</p>
-<iframe src="YOUR_GOOGLE_FORM_LINK" width="100%" height="650"></iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeybnccLzNMSXBJpdzUU6L6cVGiavVVWmfQApqMLKEXTxubMA/viewform?embedded=true" width="100%" height="650"></iframe>
 </section><section class="card">
 <h2>Advance Payment</h2>
 <button class="btn call" onclick="window.open('YOUR_RAZORPAY_LINK','_blank')">Pay via Razorpay</button>
