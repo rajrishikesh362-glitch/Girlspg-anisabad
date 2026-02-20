@@ -1,258 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girls PG Anisabad | Premium Summer Stay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --warm-yellow: #FFD54F;
+            --soft-orange: #FFB74D;
+            --light-sky: #FFF8E1;
+            --deep-blue: #003366;
+            --wa-green: #25D366;
+            --white: #ffffff;
+        }
 
-<title>Best Girls PG in Anisabad Patna | Safe Ladies Hostel</title>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        
+        body {
+            background: linear-gradient(135deg, var(--light-sky) 0%, #fff 100%);
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-<meta name="description"
-content="Top rated Girls PG in Anisabad Patna for students & working women. Safe, affordable, CCTV, WiFi, power backup. Book instantly.">
+        /* --- Summer Background & Sun Rays --- */
+        .sun-bg {
+            position: fixed;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,213,79,0.4) 0%, rgba(255,183,77,0) 70%);
+            z-index: -1;
+            filter: blur(50px);
+            animation: pulse 8s infinite alternate;
+        }
 
-<!-- ===== GOOGLE ANALYTICS ===== -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXX');
-</script>
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            100% { transform: scale(1.2); opacity: 0.9; }
+        }
 
-<style>
-body{
-margin:0;
-font-family:Segoe UI, Arial;
-background:#0b1d3a;
-color:white;
-text-align:center;
-overflow-x:hidden;
-}
+        /* --- Falling Leaves Animation --- */
+        .leaf {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: #81C784;
+            border-radius: 0 100%;
+            z-index: 10;
+            pointer-events: none;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
 
-/* ===== MOVING CLOUDS ===== */
-.cloud{
-position:fixed;
-top:0;
-left:-200px;
-width:300px;
-opacity:.7;
-animation:moveCloud 60s linear infinite;
-z-index:1;
-}
+        @keyframes fall {
+            0% { top: -10%; transform: translateX(0) rotate(0deg); }
+            100% { top: 110%; transform: translateX(100px) rotate(360deg); }
+        }
 
-@keyframes moveCloud{
-to{transform:translateX(120vw);}
-}
+        /* --- Navigation --- */
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 10%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
 
-/* ===== THUNDER FLASH ===== */
-.flash{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:white;
-opacity:0;
-pointer-events:none;
-z-index:9999;
-}
+        nav .logo { font-weight: 700; color: var(--deep-blue); font-size: 1.5rem; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 2rem; }
+        nav ul li a { text-decoration: none; color: #555; font-weight: 500; transition: 0.3s; }
+        nav ul li a:hover { color: var(--soft-orange); }
 
-@keyframes lightning{
-0%,95%,100%{opacity:0}
-96%{opacity:.9}
-97%{opacity:0}
-98%{opacity:.6}
-}
+        /* --- Hero Section --- */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(255,213,79,0.2), transparent);
+            padding: 20px;
+        }
 
-/* ===== NAVBAR ===== */
-nav{
-position:sticky;
-top:0;
-background:white;
-padding:12px;
-box-shadow:0 2px 10px rgba(0,0,0,0.2);
-z-index:1000;
-}
+        .hero-content {
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+            padding: 40px;
+            border-radius: 50%;
+        }
 
-nav a{
-margin:0 14px;
-text-decoration:none;
-font-weight:bold;
-color:#003366;
-}
+        .hero h1 { font-size: 3.5rem; color: var(--deep-blue); margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; color: #666; margin-bottom: 30px; }
 
-/* ===== HERO ===== */
-header{
-background:linear-gradient(#102a54,#1f4f9e);
-padding:100px 20px;
-}
+        .btn-container { display: flex; gap: 15px; }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-3px); }
+        .btn-wa { background: var(--wa-green); color: white; }
+        .btn-call { background: var(--deep-blue); color: white; }
 
-.hero-btn{
-background:#003366;
-color:white;
-padding:16px 28px;
-margin:10px;
-border:none;
-border-radius:8px;
-font-size:16px;
-cursor:pointer;
-}
+        /* --- Pricing Cards --- */
+        .section { padding: 80px 10%; text-align: center; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
 
-.whatsapp{background:#25D366}
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--light-sky);
+            transition: 0.3s;
+        }
+        .card:hover { border-color: var(--soft-orange); }
+        .card h3 { color: var(--deep-blue); margin-bottom: 15px; }
+        .price { font-size: 2rem; font-weight: 700; color: var(--soft-orange); }
 
-/* ===== CARD ===== */
-.card{
-background:white;
-color:#003366;
-max-width:1100px;
-margin:40px auto;
-padding:40px;
-border-radius:16px;
-box-shadow:0 0 25px rgba(0,0,0,0.3);
-}
+        /* --- Booking & Contact --- */
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-/* ===== GRID ===== */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-margin-top:25px;
-}
+        iframe { width: 100%; border-radius: 15px; border: none; }
 
-.price{
-border:2px solid #6ec6ff;
-padding:20px;
-border-radius:12px;
-}
+        /* --- Floating Action Buttons --- */
+        .fab-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 2000;
+        }
+        .fab {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
 
-/* ===== FLOAT BUTTONS ===== */
-.float{
-position:fixed;
-right:18px;
-z-index:999;
-border:none;
-border-radius:50%;
-width:55px;
-height:55px;
-font-size:22px;
-cursor:pointer;
-}
-
-.call{bottom:90px;background:#003366;color:white}
-.wa{bottom:20px;background:#25D366;color:white}
-
-footer{
-background:#1f4f9e;
-padding:25px;
-}
-</style>
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 5%; }
+            nav ul { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .section { padding: 50px 5%; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- CLOUDS -->
-<img class="cloud" src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Cloud_icon.png">
+    <div class="sun-bg"></div>
 
-<!-- THUNDER -->
-<div id="flash" class="flash"></div>
+    <div class="leaf" style="left: 10%; animation-duration: 7s;"></div>
+    <div class="leaf" style="left: 30%; animation-duration: 10s; animation-delay: 2s;"></div>
+    <div class="leaf" style="left: 70%; animation-duration: 8s; animation-delay: 1s;"></div>
+    <div class="leaf" style="left: 90%; animation-duration: 12s;"></div>
 
-<script>
-/* Thunder effect */
-setInterval(()=>{
-let f=document.getElementById("flash");
-f.style.animation="lightning .7s";
-setTimeout(()=>f.style.animation="none",800);
-},8000);
-</script>
+    <nav>
+        <div class="logo">SunStay PG</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#book">Book</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav>
-<a href="#">Home</a>
-<a href="#pricing">Pricing</a>
-<a href="#booking">Book</a>
-<a href="#reviews">Reviews</a>
-<a href="#contact">Contact</a>
-</nav>
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1>Girls PG — Anisabad Patna</h1>
+            <p>Safe • Affordable • Premium Stay for Students & Working Women</p>
+            <div class="btn-container">
+                <a href="#" class="btn btn-wa">WhatsApp Enquiry</a>
+                <a href="#" class="btn btn-call">Call Now</a>
+            </div>
+        </div>
+    </header>
 
-<header>
-<h1>Girls PG — Anisabad Patna</h1>
-<p>Safe • Affordable • Premium Stay for Students & Working Women</p>
+    <section class="section" id="pricing">
+        <h2>Affordable Pricing Plans</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Triple Sharing</h3>
+                <p class="price">₹6,500/mo</p>
+                <p>Fully Furnished, AC/Non-AC options</p>
+            </div>
+            <div class="card">
+                <h3>6-Month Plan</h3>
+                <p class="price">₹36,000</p>
+                <p>Save ₹3,000 + Priority Services</p>
+            </div>
+            <div class="card">
+                <h3>Yearly Plan</h3>
+                <p class="price">₹70,000</p>
+                <p>Best Value + Free Laundry Service</p>
+            </div>
+        </div>
+    </section>
 
-<button class="hero-btn whatsapp"
-onclick="window.open('https://wa.me/918969994472?text=Hi%20I%20want%20details%20about%20PG','_blank')">
-WhatsApp Enquiry
-</button>
+    <section class="section" id="book" style="background: rgba(255,255,255,0.5);">
+        <h2>Instant Room Booking</h2>
+        <div class="form-container">
+            <p>Fill out the form below to block your bed instantly.</p>
+            <div style="height: 400px; background: #f9f9f9; display: flex; align-items: center; justify-content: center; border-radius: 10px; margin-top: 20px;">
+                [Embedded Google Form Content]
+            </div>
+        </div>
+    </section>
 
-<button class="hero-btn"
-onclick="window.location.href='tel:8969994472'">
-Call Now
-</button>
-</header>
+    <section class="section">
+        <h2>Secure Advance Payment</h2>
+        <div class="btn-container" style="justify-content: center; margin-top: 20px;">
+            <button class="btn" style="background: #526aff; color: white;">Pay via Razorpay</button>
+            <button class="btn" style="background: #ff9800; color: white;">UPI Transfer</button>
+        </div>
+    </section>
 
-<!-- PRICING -->
-<section id="pricing" class="card">
-<h2>Pricing Plans</h2>
+    <section class="section" id="contact">
+        <h2>Visit Us</h2>
+        <p>Main Road, Anisabad, Patna, Bihar - 800002</p>
+        <div class="grid" style="grid-template-columns: 1fr;">
+            <div class="form-container" style="width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; background: #eee;">
+                [Embedded Google Maps]
+            </div>
+        </div>
+    </section>
 
-<div class="grid">
-<div class="price"><h3>₹7000 / Month</h3><p>Triple Sharing</p></div>
-<div class="price"><h3>₹36,000 — 6 Months</h3><p>Save ₹6,000</p></div>
-<div class="price"><h3>₹60,000 — 1 Year ⭐</h3><p>Best Value</p></div>
-</div>
-</section>
-
-<!-- BOOKING -->
-<section id="booking" class="card">
-<h2>🔥 Instant Room Booking</h2>
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeybnccLzNMSXBJpdzUU6L6cVGiavVVWmfQApqMLKEXTxubMA/viewform?embedded=true"
-width="100%" height="650"></iframe>
-</section>
-
-<!-- PAYMENT -->
-<section class="card">
-<h2>Advance Payment</h2>
-
-<button class="hero-btn"
-onclick="window.open('https://rzp.io/l/YOUR_LINK','_blank')">
-Pay via Razorpay
-</button>
-
-<button class="hero-btn"
-onclick="window.open('upi://pay?pa=YOURUPI@upi','_blank')">
-Pay via UPI
-</button>
-</section>
-
-<!-- WORKING GOOGLE REVIEWS -->
-<section id="reviews" class="card">
-<h2>⭐ Google Reviews</h2>
-
-<iframe
-src="https://search.google.com/local/reviews?placeid=YOUR_PLACE_ID"
-width="100%" height="500">
-</iframe>
-
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="card">
-<h2>Contact & Location</h2>
-
-<p>📞 8969994472</p>
-<p>📍 Anisabad, Patna</p>
-
-<iframe src="https://maps.google.com/maps?q=Anisabad,Patna&output=embed"
-width="100%" height="350"></iframe>
-</section>
-
-<footer>
-<p>© 2026 Girls PG Anisabad Patna</p>
-</footer>
-
-<!-- FLOAT BUTTONS -->
-<button class="float call"
-onclick="window.location.href='tel:8969994472'">📞</button>
-
-<button class="float wa"
-onclick="window.open('https://wa.me/918969994472','_blank')">💬</button>
+    <div class="fab-container">
+        <a href="tel:+910000000000" class="fab" style="background: var(--deep-blue);">📞</a>
+        <a href="https://wa.me/910000000000" class="fab" style="background: var(--wa-green);">💬</a>
+    </div>
 
 </body>
 </html>
